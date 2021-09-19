@@ -18,6 +18,7 @@ let started = false;
 let chunks = [];
 
 start.addEventListener("click", (() => {
+    firstClick = true
     if (started) {
         start.innerText = "Start Recording";
         start.style.backgroundColor = "#FFFFFF"
@@ -41,7 +42,6 @@ const handleSuccess = function(stream) {
             let blob = new Blob(chunks, {type: "audio/mpeg" });
             let url = URL.createObjectURL(blob);
             player.src = url;
-            //sendData(blob)
         };
     };
 };
@@ -53,7 +53,6 @@ navigator.mediaDevices.getUserMedia({ audio: true, video: false })
 
 let firstClick = true;
 document.addEventListener("click", function(evt){
-    //player.play();
     if (evt.target.dataset.name === "span")
     {
         player.play();
@@ -101,4 +100,3 @@ submit.addEventListener("click", function() {
     }
     text.innerHTML = newText
 })
-

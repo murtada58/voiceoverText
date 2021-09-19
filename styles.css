@@ -78,3 +78,24 @@ button:hover {
     color: red;
 }
 
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+        "Title Title"
+        "text text"
+        "audio audio"
+        "start start"
+        "input input"
+        "submit submit";
+        justify-items: stretch;
+        text-align: center;
+        align-items: center;
+    }
+}
