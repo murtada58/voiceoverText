@@ -61,6 +61,7 @@ span:hover {
 }
 
 button, label {
+    font-family: 'Poppins', sans-serif;
     margin: 1rem;
     border: none;
     border-radius: 1rem;
