@@ -16,7 +16,6 @@ body {
     align-items: center;
 }
 
-
 #title {
     grid-area: Title;
 }
@@ -44,7 +43,7 @@ span:hover {
 }
 
 #input {
-    
+    font-family: 'Poppins', sans-serif;
     display: block;
     width: 95%;
     margin: 1rem;
@@ -89,7 +88,6 @@ button:hover, label:hover {
 .color {
     color: red;
 }
-
 
 @media only screen and (max-width: 800px) {
     body {
