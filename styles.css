@@ -6,11 +6,11 @@ body {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-areas:
-    "Title Title"
-    "text text"
-    "audio audio"
-    "input input"
-    "submit start";
+    "Title Title Title"
+    "text text text"
+    "audio audio audio"
+    "input input input"
+    "submit start upload";
     justify-items: stretch;
     text-align: center;
     align-items: center;
@@ -56,7 +56,11 @@ span:hover {
     grid-area: submit;
 }
 
-button {
+#upload-button {
+    grid-area: upload;
+}
+
+button, label {
     margin: 1rem;
     border: none;
     border-radius: 1rem;
@@ -69,7 +73,7 @@ button {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-button:hover {
+button:hover, label:hover {
     background-color: #ddd;
     color: black;
 }
@@ -79,7 +83,7 @@ button:hover {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
     body {
         margin: 0;
         padding: 0;
@@ -92,6 +96,7 @@ button:hover {
         "text text"
         "audio audio"
         "start start"
+        "upload upload"
         "input input"
         "submit submit";
         justify-items: stretch;

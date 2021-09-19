@@ -100,3 +100,10 @@ submit.addEventListener("click", function() {
     }
     text.innerHTML = newText
 })
+
+function handleFiles(event) {
+    let files = event.target.files;
+    player.src = URL.createObjectURL(files[0]);
+}
+
+document.getElementById("upload").addEventListener("change", handleFiles, false);
