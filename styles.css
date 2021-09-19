@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+    "Title Title"
+    "text text"
+    "audio audio"
+    "input input"
+    "submit start";
+    justify-items: stretch;
+    text-align: center;
+    align-items: center;
+}
+
+
+#title {
+    grid-area: Title;
+}
+
+#text {
+    grid-area: text;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#start {
+   grid-area: start;
+}
+#player {
+    grid-area: audio;
+    width: 100%;
+}
+
+#input {
+    grid-area: input;
+    width: 95%;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#submit {
+    grid-area: submit;
+}
+
+button {
+    margin: 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-align: center;
+    background-color: #FFFFFF;
+    color: black;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.color {
+    color: red;
+}
+
