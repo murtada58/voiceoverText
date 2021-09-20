@@ -60,15 +60,19 @@ document.addEventListener("click", function(evt){
 
 setInterval(function(){
     const sectionPlayed = Math.round((player.currentTime / player.duration) * originalText.length)
+
     for (i=0; i < originalText.length; i++)
     {
-        if (i < sectionPlayed)
+        if (text.children[i])
         {
-            text.children[i].classList.add("color")
-        }
-        else
-        {
-            text.children[i].classList.remove("color")
+            if (i < sectionPlayed)
+            {
+                text.children[i].classList.add("color")
+            }
+            else
+            {
+                text.children[i].classList.remove("color")
+            }
         }
     }
 }, 100);
@@ -83,7 +87,14 @@ submit.addEventListener("click", function() {
     let newText = ""
     for (i = 0; i < originalText.length; i++)
     {
-        newText += `<span data-num="${i}" data-name="span">${originalText[i]}</span>`
+        if (originalText[i] === '\n')
+        {
+            newText += "<br/>"
+        }
+        else
+        {
+            newText += `<span data-num="${i}" data-name="span">${originalText[i]}</span>`
+        }
     }
     text.innerHTML = newText
 })
