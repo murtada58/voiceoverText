@@ -9,7 +9,7 @@ text.innerHTML = newText
 const div = document.getElementById("text_div");
 
 const player = document.getElementById('player');
-
+player.currentTime = 1000000000000000000000000000000000000000;
 const start = document.getElementById("start");
 
 
@@ -18,7 +18,6 @@ let started = false;
 let chunks = [];
 
 start.addEventListener("click", (() => {
-    firstClick = true
     if (started) {
         start.innerText = "Start Recording";
         start.style.backgroundColor = "#FFFFFF"
@@ -42,6 +41,7 @@ const handleSuccess = function(stream) {
             let blob = new Blob(chunks, {type: "audio/mpeg" });
             let url = URL.createObjectURL(blob);
             player.src = url;
+            player.currentTime = 1000000000000000000000000000000000000000;
         };
     };
 };
@@ -50,24 +50,11 @@ navigator.mediaDevices.getUserMedia({ audio: true, video: false })
 .then(handleSuccess);
 
 
-
-let firstClick = true;
 document.addEventListener("click", function(evt){
     if (evt.target.dataset.name === "span")
     {
-        player.play();
-        if (firstClick)
-        {
-            setTimeout(function(){
-                player.currentTime = (evt.target.dataset.num  / originalText.length)* player.duration;
-            } , 500)
-            
-        }
-        else
-        {
-            player.currentTime = (evt.target.dataset.num  / originalText.length)* player.duration;
-        }
-        firstClick = false;
+        player.play()
+        player.currentTime = (evt.target.dataset.num  / originalText.length)* player.duration;   
     }
 })
 
@@ -104,6 +91,7 @@ submit.addEventListener("click", function() {
 function handleFiles(event) {
     let files = event.target.files;
     player.src = URL.createObjectURL(files[0]);
+    player.currentTime = 1000000000000000000000000000000000000000;
 }
 
 document.getElementById("upload").addEventListener("change", handleFiles, false);
