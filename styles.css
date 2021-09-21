@@ -2,9 +2,11 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100vh;
     font-family: 'Poppins', sans-serif;
     display: grid;
     grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
     "Title Title Title"
     "text text text"
@@ -28,10 +30,14 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-size: 1.5rem;
 }
 
 span:hover {
     cursor: pointer;
+    position: relative;
+    top: -0.25rem;
+    font-weight: bold;
 }
 
 #start {
@@ -39,7 +45,8 @@ span:hover {
 }
 #player {
     grid-area: audio;
-    width: 100%;
+    width: 97.5%;
+    justify-self: center;
 }
 
 #input {
