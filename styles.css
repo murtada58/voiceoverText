@@ -116,4 +116,10 @@ button:hover, label:hover {
         text-align: center;
         align-items: center;
     }
+    span:hover {
+        cursor: pointer;
+        position: relative;
+        top: 0;
+        font-weight: normal;
+    }
 }
